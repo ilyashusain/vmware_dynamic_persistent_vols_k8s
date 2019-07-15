@@ -1,3 +1,4 @@
+<project>
 <distributionManagement>
 
   <repository>
@@ -7,3 +8,4 @@
   </repository>
   
 </distributionManagement>
+</project>
