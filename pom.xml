@@ -22,13 +22,7 @@
 </settings>
 
 
-<project>
-    
-    <dependency>
-        <groupId>com.ilyas.nexus</groupId>
-        <artifactId>nginx</artifactId>
-        <version>1</version>
-    </dependency>  
+<project> 
   
 <distributionManagement>
   <repository>
