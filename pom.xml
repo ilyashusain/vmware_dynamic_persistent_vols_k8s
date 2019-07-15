@@ -1,14 +1,17 @@
 <project>
 <distributionManagement>
   
-  <profile>
-    <id>local</id>
   <repository>
     <id>releases</id>
     <name>Releases</name>
     <url>http://192.168.0.90:32526/nexus/content/repositories/releases/</url>
   </repository>
-  </profile>
+  
+    <dependency>
+        <groupId>com.shubham.TestNexus</groupId>
+        <artifactId>TestNexus</artifactId>
+        <version>1</version>
+    </dependency>
   
 </distributionManagement>
 </project>
