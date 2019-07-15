@@ -1,5 +1,29 @@
-<project>
+<?xml version="1.0" encoding="UTF-8"?>
+<settings xmlns="http://maven.apache.org/SETTINGS/1.1.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.1.0 http://maven.apache.org/xsd/settings-1.1.0.xsd">
 
+
+    <server>
+      <id>nexus-snapshots</id>
+      <username>admin</username>
+      <password>admin123</password>
+    </server>
+
+  <mirrors>
+    <mirror>
+      <id>central</id>
+      <name>central</name>
+      <url>http://192.168.0.90:32526/nexus/content/repositories/releases/</url>
+      <mirrorOf>*</mirrorOf>
+    </mirror>
+  </mirrors>
+    
+</settings>
+
+
+<project>
+    
     <dependency>
         <groupId>com.ilyas.nexus</groupId>
         <artifactId>nginx</artifactId>
