@@ -1,8 +1,8 @@
 <project>
 
     <dependency>
-        <groupId>com.shubham.TestNexus</groupId>
-        <artifactId>TestNexus</artifactId>
+        <groupId>com.ilyas.nexus</groupId>
+        <artifactId>nginx</artifactId>
         <version>1</version>
     </dependency>  
   
