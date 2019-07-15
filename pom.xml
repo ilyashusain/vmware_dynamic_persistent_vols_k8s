@@ -1,0 +1,9 @@
+<distributionManagement>
+
+  <repository>
+    <id>releases</id>
+    <name>Releases</name>
+    <url>http://192.168.0.90:32526/nexus/content/repositories/releases/</url>
+  </repository>
+  
+</distributionManagement>
