@@ -1,4 +1,4 @@
-# vmware_dynamic_vols_k8s
+# vmware_dynamic_persistent_vols_k8s
 
 ## Prerequisites:
 
