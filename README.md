@@ -17,3 +17,38 @@ Execute the following commands to create the storage class and associated pvc (p
 ```kubectl apply -f persistent-volume-claim.yml```
 
 As we invoke the storage class utility, and apply a persistent volume claim, a persistent volume hosting 15Gi of space (specified by us in the pvc) is dynamically provisioned and it is this volume where the jenkins home folder will be persisted. To view the persistent volume you just created, run ```kubectl get pv```. You can also view the pv in the vspehre ui in the storage directories for your datacenter at /DC1/kube-vols.
+
+## 2. Change mounting location of jenkins.yml
+
+To begin persisting the jenkins folder, set the mountPath in the jenkins.yaml to "/etc/testing" as follows:
+
+  ...
+        volumeMounts:
+        - name: jobs
+          mountPath: "/var/loading"
+  ...
+  
+Any data to be persisted to the volume will now be located in this directory.
+
+## 3. Create the jenkins deployment:
+
+Execute:
+
+```kubectl apply -f jenkins.yml```
+
+to create the jenkins master deployment. Locate which worker node your jenkins pod was deployed to by getting the name of your pod with ```kubectl get pods```, then take the name of the pod and run ```kubectl describe pods <pod name>``` to find the node that hosts the deployment.
+
+## 4. ssh into jenkins container as root
+
+First, ssh into the node that hosts the jenkins deployment as uncovered in previous step:
+
+	ssh <worker node ip where jenkins deployed>
+
+Then list the running containers and search for your jenkins container:
+
+	sudo docker ps -a | head -6 #search for ID of jenkins container
+  
+Finally, ssh into this container:
+
+	sudo docker exec -it -u root <docker ID of jenkins-auto-ci> /bin/bash
+  
