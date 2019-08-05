@@ -77,3 +77,23 @@ Apply the changes:
 	kubectl apply -f jenkins.yaml
 	
 You have now persisted the jenkins home folder, and therefore you have effectively persisted the jenkins container.
+
+## 8. Test persistent storage
+
+Open the jenkins instance in the browser by getting the NodePort for your pod:
+
+```kubectl get svc```
+
+In your browser open the jenkins ui:
+
+```http://<IP of the node hosting your pod>:<NodePort>```
+
+and create a dummy job. Now delete your deployment:
+
+```kubectl delete -f jenkins.yml```
+
+and recreate the deployment:
+
+```kubectl apply -f jenkins.yml```
+
+Access the jenkins ui by repeating the just mentioned instructions in this step. Your dummy job should still be there.
