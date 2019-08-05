@@ -24,11 +24,11 @@ As we invoke the storage class utility, and apply a persistent volume claim, a p
 
 To begin persisting the jenkins folder, set the mountPath in the jenkins.yaml to "/etc/testing" as follows:
 
-  ...
-        volumeMounts:
-        - name: jobs
-          mountPath: "/var/loading"
-  ...
+	...
+	volumeMounts:
+ 	- name: jobs
+	  mountPath: "/var/loading"
+	...
   
 Any data to be persisted to the volume will now be located in this directory.
 
@@ -66,11 +66,11 @@ Copy the contents of `/var/jenkins_home` onto the volume's directory which we sp
 
 Finally, exit the container and change the mount path in the jenkins.yaml back to `/var/jenkins_home` as such:
 
-  ...
-        volumeMounts:
-        - name: jobs
-          mountPath: "/var/jenkins_home"
-  ...
+	...
+	volumeMounts:
+ 	- name: jobs
+	  mountPath: "/var/loading"
+	...
 
 Apply the changes:
 
