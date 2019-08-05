@@ -52,3 +52,6 @@ Finally, ssh into this container:
 
 	sudo docker exec -it -u root <docker ID of jenkins-auto-ci> /bin/bash
   
+## 5. Import jenkins home directory onto volume
+
+Copy the contents of `/var/jenkins_home` onto the volume's directory which we specified as `/etc/loading` by executing `cp -R /var/jenkins_home/. /etc/testing`.
