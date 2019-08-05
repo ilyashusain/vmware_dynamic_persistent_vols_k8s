@@ -4,6 +4,8 @@
 
 - A kubernetes cluster (v1.12) running on vsphere.
 
+*NOTE: If you are using a different provider, you will need to alter the storage class's provider.*
+
 ## Brief:
 
 In this guide we will go over how to attain persistent storage for our containerized k8s deployments, in particular a jenkins container instance. To achieve this, we will persist the jenkins home directory ```/var/jenkins_home``` on the container's OS onto a persistent volume cluster resource.
