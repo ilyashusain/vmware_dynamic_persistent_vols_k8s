@@ -6,7 +6,7 @@
 
 ## Brief:
 
-In this guide we will go over how to attain persistent storage for our containerized k8s deployments, in particular a jenkins container instance. To achieve this, we will persist the ```/var/jenkins_home``` directory on the container's OS.
+In this guide we will go over how to attain persistent storage for our containerized k8s deployments, in particular a jenkins container instance. To achieve this, we will persist the ```/var/jenkins_home``` directory on the container's OS onto a persistent volume cluster resource.
 
 ## 1. Create the storage class and pvc:
 
