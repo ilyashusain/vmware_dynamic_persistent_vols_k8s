@@ -15,3 +15,5 @@ Execute the following commands to create the storage class and associated pvc:
 ```kubectl apply -f storage-class.yml```
 
 ```kubectl apply -f persistent-volume-claim.yml```
+
+As we invoke the storage class cluster resource, and apply a persistent volume claim, a persistent volume is dynamically provisioned and it is this volume where the jenkins will be persisted.
