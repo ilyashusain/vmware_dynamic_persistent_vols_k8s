@@ -69,7 +69,7 @@ Finally, exit the container and change the mount path in the jenkins.yaml back t
 	...
 	volumeMounts:
  	- name: jobs
-	  mountPath: "/var/loading"
+	  mountPath: "/var/jenkins_home"
 	...
 
 Apply the changes:
