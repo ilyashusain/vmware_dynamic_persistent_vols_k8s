@@ -22,7 +22,7 @@ As we invoke the storage class utility, and apply a persistent volume claim, a p
 
 ## 2. Change mounting location of jenkins.yml
 
-To begin persisting the jenkins folder, set the mountPath in the jenkins.yaml to "/etc/testing" as follows:
+To begin persisting the jenkins folder, set the mountPath in the jenkins.yaml to "/etc/loading" as follows:
 
 	...
 	volumeMounts:
@@ -56,11 +56,11 @@ Finally, ssh into this container:
   
 ## 5. Import jenkins home directory onto volume
 
-Copy the contents of `/var/jenkins_home` onto the volume's directory which we specified as `/etc/loading` by executing `cp -R /var/jenkins_home/. /etc/testing`.
+Copy the contents of `/var/jenkins_home` onto the volume's directory which we specified as `/etc/loading` by executing `cp -R /var/jenkins_home/. /etc/loading`.
 
 ## 6. Set appropriate permissions on the persistent volume directory
 
-`cd` into `/var/testing` and execute `ls -al`; you'll see that jenkins home directory has been copied in, but all files are owned by root (and not jenkins), this is problematic. To fix this, change the permissions on the `/var/testing` directory itself and all of its contents by executing within /var/testing `chown -R jenkins:jenkins . `; if this is not done jenkins will throw errors in the browser. Once this is done, check that all files are owned by jenkins by running `ls -al` again.
+`cd` into `/var/loading` and execute `ls -al`; you'll see that jenkins home directory has been copied in, but all files are owned by root (and not jenkins), this is problematic. To fix this, change the permissions on the `/var/loading` directory itself and all of its contents by executing within /var/loading `chown -R jenkins:jenkins . `; if this is not done jenkins will throw errors in the browser. Once this is done, check that all files are owned by jenkins by running `ls -al` again.
 
 ## 7. Reset the mount path in jenkins.yaml file
 
